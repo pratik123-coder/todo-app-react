@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+import mongoose from "mongoose";
 // mongodb+srv://user1:user@cluster0.zxclfqc.mongodb.net/
 mongoose.connect("mongodb+srv://user1:user@cluster0.zxclfqc.mongodb.net/")
 const todoSchema=mongoose.Schema({
@@ -7,6 +7,5 @@ const todoSchema=mongoose.Schema({
     completed:Boolean
 })
 
-const todo=mongoose.model('todos',todoSchema);
+export const todo=mongoose.model('todos',todoSchema);
 
-module.exports={todo}

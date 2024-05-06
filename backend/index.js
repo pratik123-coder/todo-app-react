@@ -1,8 +1,8 @@
-const express=require("express");
+import express from "express";
 const app=express();
-import { todo } from "./db";
-import { createTodo } from "./types";
-import { updateTodo } from "./types";
+import { todo } from "./db.js";
+import { createTodo } from "./types.js";
+import { updateTodo } from "./types.js";
 app.use(express.json);
 
 app.post("/todos",async(req,res)=>{
@@ -46,3 +46,7 @@ app.put("/completes",async(req,res)=>{
         msg:"todo completed"
     })
 })
+
+app.listen(3000,()=>{
+    console.log("server started at http://localhost:3000")
+});
